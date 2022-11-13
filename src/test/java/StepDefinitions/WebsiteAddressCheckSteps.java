@@ -85,4 +85,54 @@ public class WebsiteAddressCheckSteps {
     public void clickAccessoriesFromTheAppleFooterMenu() {
         dc.findAndClick("altBilgiMenuAccessories");
     }
+
+    @Given("Click apple music from the Apple Footer menu")
+    public void clickAppleMusicFromTheAppleFooterMenu() {
+        dc.findAndClick("altBilgiMenuAppleMusic");
+    }
+
+    @When("Check the url of the menus under services")
+    public void checkTheUrlOfTheMenusUnderServices() {
+        String[] urller={"apple-music","apple-arcade","icloud","apple-books","apple-podcasts","app-store"};
+
+        wait.until(ExpectedConditions.urlContains("apple"));
+        String siteURL= GWD.getDriver().getCurrentUrl();
+
+        int yanlis=0; int donguSayisi=0;
+        for (int i = 0; i < urller.length; i++) {
+            donguSayisi++;
+            if (siteURL.contains(urller[i])){
+                break;
+            }else {
+                yanlis++;
+            }
+        }
+        Assert.assertTrue("Hata: Site doğrulanamadı. Eşleşen URL yok.",!(donguSayisi==yanlis));
+        dc.findAndClick("anaSayfa");
+    }
+
+    @Given("Click apple arcade from the Apple Footer menu")
+    public void clickAppleArcadeFromTheAppleFooterMenu() {
+        dc.findAndClick("altBilgiMenuAppleArcade");
+    }
+
+    @Given("Click iCloud from the Apple Footer menu")
+    public void clickICloudFromTheAppleFooterMenu() {
+        dc.findAndClick("altBilgiMenuiCloud");
+    }
+
+    @Given("Click apple books from the Apple Footer menu")
+    public void clickAppleBooksFromTheAppleFooterMenu() {
+        dc.findAndClick("altBilgiMenuAppleBooks");
+    }
+
+    @Given("Click apple podcasts from the Apple Footer menu")
+    public void clickApplePodcastsFromTheAppleFooterMenu() {
+        dc.findAndClick("altBilgiMenuApplePodcasts");
+    }
+
+    @Given("Click app store from the Apple Footer menu")
+    public void clickAppStoreFromTheAppleFooterMenu() {
+        dc.findAndClick("altBilgiMenuAppleStore");
+    }
 }
