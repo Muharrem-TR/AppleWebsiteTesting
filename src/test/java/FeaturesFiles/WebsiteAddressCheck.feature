@@ -23,3 +23,17 @@ Feature: Website address check
     When Check the url of the menus under Shopping and Detailed Information
     Given Click accessories from the Apple Footer menu
     When Check the url of the menus under Shopping and Detailed Information
+
+  Scenario: URL control of the links under the Services heading
+    Given Click apple music from the Apple Footer menu
+    When Check the url of the menus under services
+    Given Click apple arcade from the Apple Footer menu
+    When Check the url of the menus under services
+    Given Click iCloud from the Apple Footer menu
+    When Check the url of the menus under services
+    Given Click apple books from the Apple Footer menu
+    When Check the url of the menus under services
+    Given Click apple podcasts from the Apple Footer menu
+    When Check the url of the menus under services
+    Given Click app store from the Apple Footer menu
+    When Check the url of the menus under services
