@@ -43,6 +43,24 @@ public class DialogContent extends Parent {
     @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='accessories']")
     private WebElement altBilgiMenuAccessories;
 
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='apple music']")
+    private WebElement altBilgiMenuAppleMusic;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='apple arcade']")
+    private WebElement altBilgiMenuAppleArcade;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='icloud']")
+    private WebElement altBilgiMenuiCloud;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='apple books']")
+    private WebElement altBilgiMenuAppleBooks;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='apple podcasts']")
+    private WebElement altBilgiMenuApplePodcasts;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='app store']")
+    private WebElement altBilgiMenuAppleStore;
+
 
 
     WebElement myElement;
@@ -69,6 +87,12 @@ public class DialogContent extends Parent {
             case "altBilgiMenuTvandHome": myElement = altBilgiMenuTvandHome; break;
             case "altBilgiMenuAirtag": myElement = altBilgiMenuAirtag; break;
             case "altBilgiMenuAccessories": myElement = altBilgiMenuAccessories; break;
+            case "altBilgiMenuAppleMusic": myElement = altBilgiMenuAppleMusic; break;
+            case "altBilgiMenuAppleArcade": myElement = altBilgiMenuAppleArcade; break;
+            case "altBilgiMenuiCloud": myElement = altBilgiMenuiCloud; break;
+            case "altBilgiMenuAppleBooks": myElement = altBilgiMenuAppleBooks; break;
+            case "altBilgiMenuApplePodcasts": myElement = altBilgiMenuApplePodcasts; break;
+            case "altBilgiMenuAppleStore": myElement = altBilgiMenuAppleStore; break;
 
         }
         clickFunction(myElement);
