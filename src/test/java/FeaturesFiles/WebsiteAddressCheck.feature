@@ -4,6 +4,7 @@ Feature: Website address check
     Given Go to Apple website (Turkey)
     Then  Verify that you are on the right site
 
+  @SmokeTest
   Scenario: URL control of the links under the heading of Shopping and Detailed Information
     Given Click store from the Apple Footer menu
     When Check the url of the menus under Shopping and Detailed Information
@@ -24,6 +25,7 @@ Feature: Website address check
     Given Click accessories from the Apple Footer menu
     When Check the url of the menus under Shopping and Detailed Information
 
+  @SmokeTest
   Scenario: URL control of the links under the Services heading
     Given Click apple music from the Apple Footer menu
     When Check the url of the menus under services
