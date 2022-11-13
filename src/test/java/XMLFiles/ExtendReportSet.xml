@@ -11,10 +11,10 @@
         <protocol>https</protocol>
 
         <!-- title of the document -->
-        <documentTitle>Campus Report</documentTitle>
+        <documentTitle>Apple Website Testing</documentTitle>
 
         <!-- report name - displayed at top-nav -->
-        <reportName>Campus Regression - Cucumber Report</reportName>
+        <reportName>Apple Website Testing - Cucumber Report</reportName>
 
         <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
         <dateFormat>yyyy-MM-dd</dateFormat>
