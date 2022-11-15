@@ -50,7 +50,7 @@ public class DialogContent extends Parent {
     private WebElement altBilgiMenuAppleArcade;
 
     @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='icloud']")
-    private WebElement altBilgiMenuiCloud;
+    private WebElement altBilgiMenuICloud;
 
     @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='apple books']")
     private WebElement altBilgiMenuAppleBooks;
@@ -60,6 +60,39 @@ public class DialogContent extends Parent {
 
     @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='app store']")
     private WebElement altBilgiMenuAppleStore;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='accessibility']")
+    private WebElement altBilgiMenuAccessibility;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='environment']")
+    private WebElement altBilgiMenuEnvironment;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='privacy']")
+    private WebElement altBilgiMenuPrivacy;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='supplier responsibility']")
+    private WebElement altBilgiMenuSupplierResponsibility;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='newsroom']")
+    private WebElement altBilgiMenuNewsroom;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='apple leadership']")
+    private WebElement altBilgiMenuAppleLeadership;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='career opportunities']")
+    private WebElement altBilgiMenuCareerOpportunities;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='warranty']")
+    private WebElement altBilgiMenuWarranty;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='ethics and compliance']")
+    private WebElement altBilgiMenuEthicsAndCompliance;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='events']")
+    private WebElement altBilgiMenuEvents;
+
+    @FindBy(css = "ul[class='ac-gf-directory-column-section-list'] [data-analytics-title='contact apple']")
+    private WebElement altBilgiMenuContactApple;
 
 
 
@@ -89,10 +122,21 @@ public class DialogContent extends Parent {
             case "altBilgiMenuAccessories": myElement = altBilgiMenuAccessories; break;
             case "altBilgiMenuAppleMusic": myElement = altBilgiMenuAppleMusic; break;
             case "altBilgiMenuAppleArcade": myElement = altBilgiMenuAppleArcade; break;
-            case "altBilgiMenuiCloud": myElement = altBilgiMenuiCloud; break;
+            case "altBilgiMenuICloud": myElement = altBilgiMenuICloud; break;
             case "altBilgiMenuAppleBooks": myElement = altBilgiMenuAppleBooks; break;
             case "altBilgiMenuApplePodcasts": myElement = altBilgiMenuApplePodcasts; break;
             case "altBilgiMenuAppleStore": myElement = altBilgiMenuAppleStore; break;
+            case "altBilgiMenuAccessibility": myElement = altBilgiMenuAccessibility; break;
+            case "altBilgiMenuEnvironment": myElement = altBilgiMenuEnvironment; break;
+            case "altBilgiMenuPrivacy": myElement = altBilgiMenuPrivacy; break;
+            case "altBilgiMenuSupplierResponsibility": myElement = altBilgiMenuSupplierResponsibility; break;
+            case "altBilgiMenuNewsroom": myElement = altBilgiMenuNewsroom; break;
+            case "altBilgiMenuAppleLeadership": myElement = altBilgiMenuAppleLeadership; break;
+            case "altBilgiMenuCareerOpportunities": myElement = altBilgiMenuCareerOpportunities; break;
+            case "altBilgiMenuWarranty": myElement = altBilgiMenuWarranty; break;
+            case "altBilgiMenuEthicsAndCompliance": myElement = altBilgiMenuEthicsAndCompliance; break;
+            case "altBilgiMenuEvents": myElement = altBilgiMenuEvents; break;
+            case "altBilgiMenuContactApple": myElement = altBilgiMenuContactApple; break;
 
         }
         clickFunction(myElement);
