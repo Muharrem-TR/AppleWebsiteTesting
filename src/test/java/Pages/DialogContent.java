@@ -167,4 +167,16 @@ public class DialogContent extends Parent {
         return myElement;
     }
 
+    public void specialFindAndClick(String strElement, double scrollingPrecision) {
+
+        // Gerektiğinde nokta atışı hedefe gitmesi için
+        //case "anaSayfa": myElement = anaSayfa; break;
+        // dc.specialFindAndClick("anaSayfa",virgülKoyupDoubleBirDeğerGitin)  //dc.specialFindAndClick("anaSayfa",1.3)
+
+        switch (strElement) {
+            //case "anaSayfa": myElement = anaSayfa; break;
+
+        }
+        clickFunction(myElement,scrollingPrecision);
+    }
 }
