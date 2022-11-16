@@ -21,42 +21,56 @@ public class Parent {
         element.sendKeys(value);
     }
 
-    public void waitUntilVisible(WebElement element) {
+    public void waitUntilVisible(WebElement element) { // düz kaydırma
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public void scrollToElement(WebElement element) {
-//        JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
-//        js.executeScript("arguments[0].scrollIntoView();", element);
+        JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
+        js.executeScript("arguments[0].scrollIntoView();", element);
+    }
 
-        //--------------------------------------------------------------------------------------------------------------
+    public void scrollToElement(WebElement element, String Middle) {  // elementi ortalar
+
+        if (Middle.toLowerCase().contains("Middle")){
+            JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
+
+            String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);"
+                    + "var elementTop = arguments[0].getBoundingClientRect().top;"
+                    + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
+
+            js.executeScript(scrollElementIntoMiddle, element);
+        }
+    }
+
+    public void scrollToElement(WebElement element, double scrollingPrecision) { // elementi verilen değere göre hassas ortalar
+
+        String doubleCevirilmisHali=String.valueOf(scrollingPrecision).replace(".",",");
 
         JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
 
         String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);"
                 + "var elementTop = arguments[0].getBoundingClientRect().top;"
-                + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
+                + "window.scrollBy(0, elementTop-(viewPortHeight/"+doubleCevirilmisHali+"));";
 
         js.executeScript(scrollElementIntoMiddle, element);
-
-//WebElement element = driver.findElement(By.xxx("xxxx"));
-
-//String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);"
-//                                            + "var elementTop = arguments[0].getBoundingClientRect().top;"
-//                                            + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
-
-//((JavascriptExecutor) driver).executeScript(scrollElementIntoMiddle, element);
-
-//    String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);"
-//            + "var elementTop = arguments[0].getBoundingClientRect().top;"
-//            + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
-
-//        js.executeScript(scrollElementIntoMiddle, element);
     }
 
-    public void clickFunction(WebElement element){
+    public void clickFunction(WebElement element){ // düz tıklatma
         scrollToElement(element);
+        waitUntilClickable(element);
+        element.click();
+    }
+
+    public void clickFunction(WebElement element, String Middle){  // elementi ortalayarak tıklatma
+        scrollToElement(element,Middle);
+        waitUntilClickable(element);
+        element.click();
+    }
+
+    public void clickFunction(WebElement element, double scrollingPrecision){ // elementi verilen değere göre hassas ortalayarak tıklatma
+        scrollToElement(element,scrollingPrecision);
         waitUntilClickable(element);
         element.click();
     }
