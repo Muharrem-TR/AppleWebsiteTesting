@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -95,6 +96,12 @@ public class Parent {
         Actions actions=new Actions(GWD.getDriver());
         Action action=actions.moveToElement(element).click().build();
         action.perform();
+    }
+
+    public void selectFunction (WebElement element, String text){
+        waitUntilVisible(element);
+        Select menu = new Select(element);
+        menu.selectByVisibleText(text);
     }
 
 }
