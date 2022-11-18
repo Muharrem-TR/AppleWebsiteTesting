@@ -95,6 +95,18 @@ public class DialogContent extends Parent {
     private WebElement altBilgiMenuContactApple;
 
 
+    @FindBy(css = "li[class='ac-gn-item ac-gn-item-menu ac-gn-mac']")
+    private WebElement macHeader;
+    @FindBy(css = "li[class='chapternav-item chapternav-item-compare']")
+    private WebElement comparing;
+    @FindBy(css = "select[id='selector-0']")
+    private WebElement leftSelector;
+    @FindBy(css = "select[id='selector-1']")
+    private WebElement middleSelector;
+    @FindBy(css = "select[id='selector-2']")
+    private WebElement rightSelector;
+
+
 
     WebElement myElement;
 
@@ -138,6 +150,10 @@ public class DialogContent extends Parent {
             case "altBilgiMenuEvents": myElement = altBilgiMenuEvents; break;
             case "altBilgiMenuContactApple": myElement = altBilgiMenuContactApple; break;
 
+            case "macHeader": myElement = macHeader; break;
+            case "comparing": myElement = comparing; break;
+
+
         }
         clickFunction(myElement);
     }
@@ -178,5 +194,14 @@ public class DialogContent extends Parent {
 
         }
         clickFunction(myElement,scrollingPrecision);
+    }
+
+    public void findAndSelect(String strElement, String text) {
+        switch (strElement) {
+            case "leftSelector": myElement = leftSelector;break;
+            case "middleSelector": myElement = middleSelector;break;
+            case "rightSelector": myElement = rightSelector;break;
+        }
+        selectFunction(myElement,text);
     }
 }
