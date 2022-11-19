@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -30,10 +31,14 @@ public class Parent {
         JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
+    public void scrollDistance(int toWhere) {
+        JavascriptExecutor js= (JavascriptExecutor) GWD.getDriver();
+        js.executeScript( "window.scrollBy(0,"+toWhere+")");
+    }
 
     public void scrollToElement(WebElement element, String Middle) {  // elementi ortalar
 
-        if (Middle.toLowerCase().contains("Middle")){
+        if (Middle.toLowerCase().contains("mid")){
             JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
 
             String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);"
@@ -81,6 +86,7 @@ public class Parent {
     }
 
     public void verifyContainsText(WebElement element, String text) {
+        scrollToElement(element,"mid");
         waitUntilVisible(element);
         Assert.assertTrue(element.getText().toLowerCase().contains(text.toLowerCase()));
     }
@@ -97,4 +103,9 @@ public class Parent {
         action.perform();
     }
 
+    public void selectFunction (WebElement element, String text){
+        waitUntilVisible(element);
+        Select menu = new Select(element);
+        menu.selectByVisibleText(text);
+    }
 }
