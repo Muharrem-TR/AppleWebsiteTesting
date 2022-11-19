@@ -108,5 +108,4 @@ public class Parent {
         Select menu = new Select(element);
         menu.selectByVisibleText(text);
     }
-
 }

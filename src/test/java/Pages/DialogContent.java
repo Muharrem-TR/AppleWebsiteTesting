@@ -178,6 +178,7 @@ public class DialogContent extends Parent {
     private WebElement SubVerify8;
 
 
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {

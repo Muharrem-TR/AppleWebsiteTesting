@@ -22,7 +22,6 @@ public class WatchTitleSteps {
         for (int i = 0; i < listElement.size(); i++)
             dc.findAndClick(listElement.get(i));
 
-
     }
     String homePage;
     @And("Verification function check")
