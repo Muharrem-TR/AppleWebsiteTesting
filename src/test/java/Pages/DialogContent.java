@@ -106,6 +106,76 @@ public class DialogContent extends Parent {
     @FindBy(css = "select[id='selector-2']")
     private WebElement rightSelector;
 
+    @FindBy(css = "a[class$='watch'][data-analytics-title='watch']")
+    private WebElement watchTitle;
+
+    @FindBy(css = "span[class='chapternav-label']")
+    private List<WebElement> comparing1;
+
+    @FindBy(xpath = "//p[text()='Macera dolu saatler.']")
+    private WebElement maceraSaatlerVerify;
+
+    @FindBy(id = "film-watch-ultra")
+    private WebElement ultraFilmButton;
+
+    @FindBy(css = "button[class='modal-close']")
+    private WebElement modalCloseButton;
+
+    @FindBy(xpath = "(//span[text()='Daha fazla bilgi'])[2]")
+    private WebElement dahaFazlaLink;
+
+    @FindBy(css = "h2[class$='hero-headline']")
+    private WebElement series8Verify;
+
+    @FindBy(css = "a[data-analytics-title='compare all models']")
+    private WebElement comparingLink;
+
+    @FindBy(css = "a[class$='compare-models']")
+    private WebElement comparingModelsLink;
+
+    @FindBy(id = "modal-header")
+    private WebElement appleTitleVerify;
+
+    @FindBy(css = "h3[class$='device-title']")
+    private List<WebElement> appleModelsVerify;
+
+    @FindBy(css = "div[class='featured-section-headline']")
+    private List<WebElement> modelsFeatureVerify;
+    @FindBy(id = "tabnav-item-display-series-8-41mm-trigger")
+    private WebElement kasa41mmButton;
+
+    @FindBy(id = "tabnav-item-display-se-40mm-trigger")
+    private WebElement kasa40mmButton;
+
+    @FindBy(css = "li[class='colornav-item']>button")
+    private List<WebElement> colorsButton;
+    @FindBy(css = "div[class='specs-headline']")
+    private WebElement teknikTitleVerify;
+
+    @FindBy(css = "button[class='accordion-header-content']")
+    private List<WebElement> subTitlesButton;
+
+    @FindBy(css = "div[class$='accordion-item-headline']")
+    private WebElement SubVerify1;
+    @FindBy(xpath = "(//div[@class='with-list-bullet'])[7]")
+    private WebElement SubVerify2;
+
+    @FindBy(xpath = "(//div[@class='with-list-bullet'])[17]")
+    private WebElement SubVerify3;
+
+    @FindBy(css = "span[class$='feature-label']")
+    private WebElement SubVerify4;
+
+    @FindBy(css = "div[class^='chip-series-copy accordion-item-copy feature-label']")
+    private WebElement SubVerify5;
+    @FindBy(css = "div[class^='connectivity-series-copy']")
+    private WebElement SubVerify6;
+
+    @FindBy(css = "div[class^='power-series-copy']")
+    private WebElement SubVerify7;
+
+    @FindBy(css = "div[class^='environmental-features-series-copy']")
+    private WebElement SubVerify8;
 
 
     WebElement myElement;
@@ -118,7 +188,8 @@ public class DialogContent extends Parent {
         }
         sendKeysFunction(myElement, value);
     }
-
+    int cntx=0;
+    int cnty=0;
     public void findAndClick(String strElement) {
 
         switch (strElement) {
@@ -153,16 +224,46 @@ public class DialogContent extends Parent {
             case "macHeader": myElement = macHeader; break;
             case "comparing": myElement = comparing; break;
 
+            case "watchTitle": myElement = watchTitle; break;
+            case "ultraFilmButton": myElement = ultraFilmButton; break;
+            case "modalCloseButton":GWD.Bekle(5);myElement = modalCloseButton; break;
+            case "dahaFazlaLink":myElement = dahaFazlaLink; break;
+            case "comparingLink":myElement = comparingLink; break;
+            case "comparingModelsLink":myElement = comparingModelsLink; break;
+            case "kasa41mmButton":myElement = kasa41mmButton; break;
+            case "kasa40mmButton":myElement = kasa40mmButton; break;
+            case "colorsButton":myElement = colorsButton.get(cntx++); break;
+            case "subTitlesButton":myElement = subTitlesButton.get(cnty++); break;
+
 
         }
-        clickFunction(myElement);
+        clickFunction(myElement,"mid");
     }
-
+    int cnt1=0;
+    int cnt2=0;
+    int cnt3=0;
     public void findAndContainsText(String strElement, String text) {
 
         switch (strElement) {
             //case "eMail": myElement = eMail; break;
-
+            case "comparing1":System.out.println("Verification passed: "+comparing1.get(cnt1).getText());
+                myElement = comparing1.get(cnt1++); break;
+            case "maceraSaatlerVerify": myElement = maceraSaatlerVerify; break;
+            case "series8Verify": myElement = series8Verify; break;
+            case "appleTitleVerify": myElement = appleTitleVerify; break;
+            case "appleModelsVerify":System.out.println("Verification passed: "+appleModelsVerify.get(cnt2).getText());
+                myElement = appleModelsVerify.get(cnt2++);break;
+            case "modelsFeatureVerify":System.out.println("Verification passed: "+modelsFeatureVerify.get(cnt3).getText());
+                myElement = modelsFeatureVerify.get(cnt3++);break;
+            case "teknikTitleVerify":myElement = teknikTitleVerify;break;
+            case "SubVerify1":myElement = SubVerify1;break;
+            case "SubVerify2":myElement = SubVerify2;break;
+            case "SubVerify3":myElement = SubVerify3;break;
+            case "SubVerify4":myElement = SubVerify4;break;
+            case "SubVerify5":myElement = SubVerify5;break;
+            case "SubVerify6":myElement = SubVerify6;break;
+            case "SubVerify7":myElement = SubVerify7;break;
+            case "SubVerify8":myElement = SubVerify8;break;
         }
         verifyContainsText(myElement, text);
     }
