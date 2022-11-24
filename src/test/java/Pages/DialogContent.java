@@ -177,6 +177,13 @@ public class DialogContent extends Parent {
     @FindBy(css = "div[class^='environmental-features-series-copy']")
     private WebElement SubVerify8;
 
+    @FindBy(css = "a[href='/tr/sitemap/']")
+    private WebElement siteMapLink;
+
+    @FindBy(xpath = "//ul[@class='list list-nobullet']/li/a")
+    public List<WebElement> siteMapFullList;
+
+
 
 
     WebElement myElement;
@@ -236,6 +243,7 @@ public class DialogContent extends Parent {
             case "colorsButton":myElement = colorsButton.get(cntx++); break;
             case "subTitlesButton":myElement = subTitlesButton.get(cnty++); break;
 
+            case "siteMapLink":myElement = siteMapLink; break;
 
         }
         clickFunction(myElement,"mid");
